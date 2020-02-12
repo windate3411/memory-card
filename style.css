@@ -140,7 +140,7 @@ h1 button {
   z-index: 2;
 }
 
-.cards .card .inner-card .inner-card-front {
+.cards .card .inner-card .inner-card-back {
   -webkit-transform: rotateX(180deg);
           transform: rotateX(180deg);
 }
@@ -182,6 +182,8 @@ h1 button {
 }
 
 .add-container {
+  opacity: 0;
+  z-index: -1;
   background-color: #f0f0f0;
   border: 2px solid #eee;
   display: -webkit-box;
