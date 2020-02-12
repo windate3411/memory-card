@@ -5,7 +5,8 @@
 }
 
 body {
-  background: #fff;
+  padding: 0;
+  background: #3E92CC;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -38,13 +39,23 @@ h1 button {
 }
 
 .btn {
-  background-color: #fff;
-  border: 1px solid #aaa;
   border-radius: 3px;
   font-size: 14px;
   margin-top: 20px;
   padding: 10px 15px;
+  text-transform: uppercase;
+  background: #27ae60;
+  color: #fff;
+  border: none;
+  font-weight: bold;
   cursor: pointer;
+}
+
+.btn:hover {
+  letter-spacing: 1px;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+  background: #434343;
 }
 
 .btn-small {
@@ -61,6 +72,8 @@ h1 button {
   position: absolute;
   bottom: 30px;
   left: 30px;
+  color: #fff;
+  background-color: #FF6666;
 }
 
 .cards {
@@ -70,6 +83,7 @@ h1 button {
   height: 300px;
   width: 500px;
   max-width: 100%;
+  overflow: hidden;
 }
 
 .cards .card {
@@ -121,17 +135,7 @@ h1 button {
   height: 100%;
   width: 100%;
   background: #fff;
-}
-
-.cards .card .inner-card .inner-card-front::after, .cards .card .inner-card .inner-card-back::after {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: "\f01e Flip";
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 16px;
-  color: #ddd;
+  border-radius: 16px;
 }
 
 .cards .card .inner-card .inner-card-front {
@@ -184,7 +188,7 @@ h1 button {
 .add-container {
   opacity: 0;
   z-index: -1;
-  background-color: #f0f0f0;
+  background-color: #95a5a6;
   border: 2px solid #eee;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -200,6 +204,7 @@ h1 button {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 10px 0;
+  margin: 0;
   position: absolute;
   top: 0;
   bottom: 0;

@@ -19,16 +19,6 @@ let currentActiveCard = 0
 const cardsEl = []
 
 // store card data
-// const cardsData = [
-//   {
-//     question: 'What is Danny',
-//     answer: 'I am'
-//   },
-//   {
-//     question: 'What are Danny',
-//     answer: 'We are'
-//   }
-// ]
 const cardsData = getCardData()
 
 // create all cards
@@ -112,7 +102,6 @@ addCardBtn.addEventListener('click', () => {
 
   if (answer.trim() && question.trim()) {
     const newCard = { question, answer }
-    console.log(newCard);
     createCard(newCard)
     cardsData.push(newCard)
     questionEl.value = '';
