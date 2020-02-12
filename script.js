@@ -19,16 +19,17 @@ let currentActiveCard = 0
 const cardsEl = []
 
 // store card data
-const cardsData = [
-  {
-    question: 'What is Danny',
-    answer: 'I am'
-  },
-  {
-    question: 'What are Danny',
-    answer: 'We are'
-  }
-]
+// const cardsData = [
+//   {
+//     question: 'What is Danny',
+//     answer: 'I am'
+//   },
+//   {
+//     question: 'What are Danny',
+//     answer: 'We are'
+//   }
+// ]
+const cardsData = getCardData()
 
 // create all cards
 
@@ -74,8 +75,54 @@ function createCard(data, index) {
 // show number of cards
 function updateCurrentText() {
   currentEl.innerText = `${currentActiveCard + 1}/${cardsEl.length}`
-
 }
+
+// get card data from local storage
+function getCardData() {
+  const cards = JSON.parse(localStorage.getItem('cards'));
+  return cards === null ? [] : cards;
+}
+
+// add card to local storage
+function setCardsData(cards) {
+  localStorage.setItem('cards', JSON.stringify(cards));
+  window.location.reload()
+}
+
+// show add container 
+showBtn.addEventListener('click', () => {
+  addContainer.classList.add('show')
+})
+
+// hide add container 
+hideBtn.addEventListener('click', () => {
+  addContainer.classList.remove('show')
+})
+
+// clear cards
+clearBtn.addEventListener('click', () => {
+  localStorage.clear();
+  window.location.reload()
+})
+
+// add new card
+addCardBtn.addEventListener('click', () => {
+  const question = questionEl.value;
+  const answer = answerEl.value;
+
+  if (answer.trim() && question.trim()) {
+    const newCard = { question, answer }
+    console.log(newCard);
+    createCard(newCard)
+    cardsData.push(newCard)
+    questionEl.value = '';
+    answerEl.value = '';
+    addContainer.classList.remove('show')
+    setCardsData(cardsData)
+  }
+})
+
+
 
 // listeners for navigation
 
