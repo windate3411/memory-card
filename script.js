@@ -15,6 +15,13 @@ const addContainer = document.getElementById('add-container')
 // keep track of current card
 let currentActiveCard = 0
 
+// set up dummy data for project first look
+const dummyData = [
+  { question: 'What\'s Javascript?', answer: 'A programming language' },
+  { question: 'What\'s Vue.js?', answer: 'A popular Front-end framework' },
+  { question: 'What are primitive values in Javascript?', answer: 'There are 6 types.Boolean,Null,Undefined,String,Number and Symbol' },
+]
+
 // store DOM Cards 
 const cardsEl = []
 
@@ -139,4 +146,5 @@ prevBtn.addEventListener('click', () => {
 
 })
 
+localStorage.setItem('cards', JSON.stringify(dummyData));
 createCards()
